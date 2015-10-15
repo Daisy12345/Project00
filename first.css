@@ -1,0 +1,62 @@
+.container{
+	display:table;
+	table-layout: fixed;
+	margin:5px;
+	border:3px solid black;
+	width:300px;
+}
+
+.item{
+	display:table-cell;
+	border: 3px solid blue;
+	background-color: black;
+	height:20px;
+
+}
+
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.flip-container, .front, .back {
+	width: 50px;
+	height: 100px;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+
+	background-color: yellow;
+}
+
+.back {
+	transform: rotateY(180deg);
+
+	background-color: green;
+}
+
+.flip-container {
+	perspective: 1000;
+}
+
+
+/*.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+	transform: rotateY(180deg);
+}
+*/
+
+
+.flip-container.flip .flipper {
+	transform: rotateY(180deg);
+}

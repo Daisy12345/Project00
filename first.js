@@ -22,17 +22,21 @@ function checkForColors() {
 
 //1. allow only 2 cells get white, when amount of white cells is 2 turn their color back to black.
 function calulateTwoBoxes(boxes){
+
+    // when array = 2 setTimeout for 5 seconds (5000) 
+    //inside of the body check if they are equal
+
         if(boxes.length > 2){
             boxes[0].style.backgroundColor = "rgb(0, 0, 0)";
             boxes[1].style.backgroundColor = "rgb(0, 0, 0)";
             boxes[2].style.backgroundColor = "rgb(0, 0, 0)";
-            checkTwoValues(boxes);
+            checkTwoValues(boxes); //take it off
             boxes = [];
         }
 }
  
 //2. create a new array with values (1, 1, 2, 2);
-var valuesArray = [1, 1, 2, 2];
+var valuesArray = [1, 1, 2, 2, 3, 3, 4, 4, 1, 1, 2, 2];
 
 //3. create a new array where you ll store shuffled values, algorithm
 // var shuffledValues = [];
@@ -64,16 +68,22 @@ addValuesToBoxes();
 //7. check for innerHTML of 1st element and 2nd and if they are same console.log(Yay, you won)
 
 function checkTwoValues(temp){
-    for(var i = 0; i < temp.length; i++){
-        if(temp[0].innerText === items[1].innerText){
-            console.log("yay, You won!");
-        }
+    console.log("first box: " + temp[0].innerText + "second box: " + temp[1].innerText);
+    if(temp[0].innerText === items[1].innerText){
+        console.log("yay, You won!");
     }
+
 }
 
 //8. Timer, check Time(), Date() in js, or you can check on moment.js
 
 //9. Set timer for 30sec and when it run off alert games is finished
+//new Date(); new Time();
+
+
+
+
+
 //10. player Object with name and score  = 0 ;
 //11 step 7, when they match you do plus 10 to the score.
 //12 Check how much score and display it, if score is bigger then 500(for example) win, if less lost
